@@ -1,0 +1,362 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dual-Mode Design System: Dark (Space) + Light (Cohere-inspired) */
+
+@layer base {
+  :root {
+    /* === DARK MODE (Default — Space / Cosmic Theme) === */
+    --background: 240 10% 3.9%;
+    --background-secondary: 240 9% 5.9%;
+    --background-tertiary: 240 8% 7.9%;
+    --foreground: 0 0% 98%;
+
+    /* Glass Morphism */
+    --glass-bg: 240 10% 15% / 0.1;
+    --glass-border: 240 10% 50% / 0.2;
+    --glass-blur: 16px;
+
+    /* Space-Themed Color Palette */
+    --deep-purple: 258 90% 66%;
+    --cosmic-gold: 45 100% 75%;
+    --stellar-silver: 220 15% 85%;
+    --nebula-violet: 280 80% 70%;
+    --aurora-green: 160 80% 60%;
+    --mars-orange: 25 90% 65%;
+
+    /* Primary Brand Colors */
+    --primary: 45 100% 75%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-glow: 45 100% 75% / 0.4;
+
+    /* Secondary */
+    --secondary: 240 10% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Accent */
+    --accent: 280 80% 70%;
+    --accent-foreground: 0 0% 98%;
+    --accent-glow: 280 80% 70% / 0.4;
+
+    /* UI Elements */
+    --card: 240 10% 15% / 0.8;
+    --card-foreground: 0 0% 98%;
+    --card-border: 240 10% 30% / 0.2;
+    --muted: 240 5% 64.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --border: 240 10% 20%;
+    --input: 240 10% 15%;
+    --ring: 45 100% 75%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Space Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(58, 47, 84, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
+    --gradient-cosmic: linear-gradient(90deg, hsl(var(--cosmic-gold)), hsl(var(--nebula-violet)), hsl(var(--deep-purple)));
+    --gradient-stellar: radial-gradient(ellipse at center, hsl(var(--primary) / 0.3) 0%, transparent 70%);
+    --gradient-nebula: conic-gradient(from 180deg at 50% 50%, hsl(var(--accent) / 0.2) 0deg, hsl(var(--primary) / 0.3) 120deg, hsl(var(--nebula-violet) / 0.2) 240deg, hsl(var(--accent) / 0.2) 360deg);
+
+    /* Shadows & Effects */
+    --shadow-neon: 0 0 20px hsl(var(--primary-glow)), 0 0 40px hsl(var(--primary-glow)), 0 0 60px hsl(var(--primary-glow));
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-elevated: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+
+    /* Animation Timing */
+    --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* === LIGHT MODE (Cohere-inspired: clean, bright, enterprise) === */
+  .light {
+    --background: 0 0% 99%;
+    --background-secondary: 220 20% 97%;
+    --background-tertiary: 220 15% 94%;
+    --foreground: 220 30% 12%;
+
+    /* Glass — frosted white */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 220 20% 85% / 0.5;
+    --glass-blur: 20px;
+
+    /* Palette — Cohere-style warm/cool */
+    --deep-purple: 258 65% 52%;
+    --cosmic-gold: 35 90% 55%;
+    --stellar-silver: 220 15% 55%;
+    --nebula-violet: 265 55% 58%;
+    --aurora-green: 160 60% 42%;
+    --mars-orange: 20 85% 55%;
+
+    /* Primary — warm coral/orange */
+    --primary: 16 80% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 16 80% 52% / 0.15;
+
+    /* Secondary */
+    --secondary: 220 15% 93%;
+    --secondary-foreground: 220 30% 12%;
+
+    /* Accent — teal */
+    --accent: 174 60% 42%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 174 60% 42% / 0.15;
+
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 12%;
+    --card-border: 220 15% 90%;
+    --muted: 220 10% 55%;
+    --muted-foreground: 220 10% 45%;
+    --border: 220 15% 88%;
+    --input: 220 15% 95%;
+    --ring: 16 80% 52%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Light Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(240, 245, 255, 0.6) 100%);
+    --gradient-cosmic: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--deep-purple)));
+    --gradient-stellar: radial-gradient(ellipse at center, hsl(var(--primary) / 0.08) 0%, transparent 70%);
+    --gradient-nebula: conic-gradient(from 180deg at 50% 50%, hsl(var(--accent) / 0.05) 0deg, hsl(var(--primary) / 0.08) 120deg, hsl(var(--nebula-violet) / 0.05) 240deg, hsl(var(--accent) / 0.05) 360deg);
+
+    /* Soft Shadows */
+    --shadow-neon: 0 4px 16px hsl(var(--primary-glow));
+    --shadow-glass: 0 4px 24px rgba(0, 0, 0, 0.06);
+    --shadow-elevated: 0 16px 40px -8px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Font Classes */
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+  }
+}
+
+/* Custom Animations & Effects */
+@layer components {
+  /* Glass Morphism — adapts to dark/light via CSS variables */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Light mode glass override for true frosted look */
+  .light .glass {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(220, 225, 235, 0.6);
+  }
+
+  /* Neon Glow Effect */
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover Magnetic Effect */
+  .magnetic {
+    transition: var(--transition-smooth);
+  }
+
+  .magnetic:hover {
+    transform: scale(1.05);
+  }
+
+  /* Cyberpunk Button (dark mode) / Clean Button (light mode) */
+  .cyber-button {
+    position: relative;
+    background: var(--gradient-primary);
+    border: 2px solid hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: var(--transition-base);
+    overflow: hidden;
+  }
+
+  .cyber-button:hover {
+    box-shadow: var(--shadow-neon);
+    transform: translateY(-2px);
+  }
+
+  .cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .cyber-button:hover::before {
+    left: 100%;
+  }
+
+  /* Light mode button refinement */
+  .light .cyber-button {
+    letter-spacing: 0.05em;
+    border-radius: 12px;
+  }
+
+  /* Parallax section wrapper */
+  .parallax-section {
+    will-change: transform;
+  }
+
+  /* Section divider — subtle gradient line */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    border: none;
+  }
+}
+
+/* Advanced Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-neon {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--primary)),
+                0 0 10px hsl(var(--primary)),
+                0 0 15px hsl(var(--primary));
+  }
+  50% {
+    box-shadow: 0 0 10px hsl(var(--primary)),
+                0 0 20px hsl(var(--primary)),
+                0 0 30px hsl(var(--primary));
+  }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes matrix-rain {
+  0% { opacity: 1; transform: translateY(-100vh); }
+  100% { opacity: 0; transform: translateY(100vh); }
+}
+
+@keyframes rotate-gradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; }
+  75% { border-radius: 60% 40% 50% 40% / 60% 30% 60% 40%; }
+}
+
+/* Utility Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.animate-gradient-rotate {
+  animation: rotate-gradient 3s linear infinite;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+/* Scrollbar — themed */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
