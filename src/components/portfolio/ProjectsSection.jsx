@@ -44,7 +44,7 @@ const ProjectsSection = () => {
       demo:'NULL',
       github: 'https://github.com/Thanikarthik1/Signature-recognition',
       icon: Target,
-      status: 'LIVE'
+      status: 'Live'
     },
     {
       id: 'deepfake-audio',
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
       demo:'https://huggingface.co/spaces/karthik-the-great/deepfake-audio-detector',
       github: 'https://github.com/Thanikarthik1/Deepfake-Audio-Detection',
       icon: Mic,
-      status: 'LIVE'
+      status: 'Live'
     },
     {
       id: 'toxic-detection',
@@ -72,7 +72,7 @@ const ProjectsSection = () => {
       demo : 'https://huggingface.co/spaces/karthik-the-great/toxic_word_predection',
       github: 'https://github.com/Thanikarthik1/Toxic_comments_detection',
       icon: ShieldAlert,
-      status: 'LIVE'
+      status: 'Live'
     },
     {
       id: 'job-portal',
@@ -99,7 +99,7 @@ const ProjectsSection = () => {
       demo : 'https://huggingface.co/spaces/karthik-the-great/Movie-Recommender',
       github: 'https://github.com/Thanikarthik1/Movie_Recommendation_System',
       icon: Play,
-      status: 'LIVE'
+      status: 'Live'
     }
   ];
 
