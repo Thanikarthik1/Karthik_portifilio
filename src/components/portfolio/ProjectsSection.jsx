@@ -5,10 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
   ExternalLink, Github, Play,
-  MessageCircle, Brain, Target, Layers
-} from 'lucide-react';
-import {
-  ExternalLink, Github, Play,
   MessageCircle, Brain, Target, Layers, ShieldAlert, Mic
 } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
