@@ -15,90 +15,100 @@ const ProjectsSection = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
-  {
-    id: 'smart-assistant',
-    title: 'Smart Multilingual Assistant',
-    category: 'ai',
-    description: 'Multilingual Retrieval-Augmented Chatbot using FAISS, SERP API, and Llama 3.',
-    longDescription: 'Developed a robust backend with document-aware, multilingual, and image-capable conversations across 20+ Indian languages using a RAG architecture.',
-    tech: ['FAISS', 'Llama 3', 'FastAPI', 'Python', 'MongoDB'],
-    features: [
-      'Hybrid multilingual RAG architecture',
-      'Context-aware responses in 20+ languages',
-      'Document and image-capable conversations',
-      'Web-based answers via SERP API'
-    ],
-    metrics: { capability: '20+ Languages', architecture: 'RAG Pipeline' },
-    github: 'https://github.com/Thanikarthik1/smart-multilingual-assistant',
-    // demo: 'https://youtube.com/your-video-link-here', // Add your video link here later!
-    icon: Brain,
-    status: 'Completed'
-  },
-  {
-    id: 'job-portal',
-    title: 'Online Job Portal Management System',
-    category: 'fullstack',
-    description: 'A comprehensive web platform connecting job seekers with employers, featuring streamlined application tracking.',
-    longDescription: 'Designed and developed a responsive job portal interface allowing users to filter listings, submit applications, and allowing employers to manage postings efficiently.',
-    tech: ['JavaScript', 'HTML/CSS', 'Node.js', 'Express', 'MongoDB'],
-    features: [
-      'User authentication and role management',
-      'Dynamic job posting and filtering',
-      'Application tracking dashboard',
-      'Responsive, mobile-first UI'
-    ],
-    metrics: { usability: 'Responsive UI', backend: 'RESTful API' },
-    github: 'https://github.com/Thanikarthik1/Online-Job-Portal-Management-System',
-    icon: Layers,
-    status: 'Completed'
-  },
-  {
-    id: 'signature-recognition',
-    title: 'Computer Vision Signature Verification',
-    category: 'ai',
-    description: 'Automated signature recognition and forgery detection system utilizing image processing techniques.',
-    longDescription: 'Leveraged Computer Vision expertise to build a pipeline that preprocesses scanned documents, extracts structural features, and classifies signatures to prevent identity fraud.',
-    tech: ['Python', 'OpenCV', 'Scikit-Image', 'NumPy', 'Machine Learning'],
-    features: [
-      'Image preprocessing and noise reduction',
-      'Feature extraction (HOG/Contour mapping)',
-      'Structural similarity index measurement',
-      'Automated forgery detection'
-    ],
-    metrics: { domain: 'Computer Vision', processing: 'Automated Pipeline' },
-    github: 'https://github.com/Thanikarthik1/Signature-recognition',
-    icon: Target,
-    status: 'Completed'
-  },
-  {
-    id: 'movie-recommender',
-    title: 'ML Movie Recommendation System',
-    category: 'ai',
-    description: 'Content-based recommendation engine suggesting films based on user preferences and metadata.',
-    longDescription: 'Built a machine learning pipeline that vectorizes movie plot summaries and genres to calculate cosine similarity, delivering highly relevant watch recommendations.',
-    tech: ['Python', 'Pandas', 'Scikit-Learn', 'NLTK', 'Cosine Similarity'],
-    features: [
-      'Data cleaning and preprocessing',
-      'TF-IDF vectorization for text data',
-      'Cosine similarity scoring',
-      'Dynamic recommendation generation'
-    ],
-    metrics: { algorithm: 'Content-Based', accuracy: 'High Relevance' },
-    github: 'https://github.com/Thanikarthik1/Movie_Recommendation_System',
-    icon: Play,
-    status: 'Completed'
-  }
-];
-  const categories = [
-    { id: 'all', label: 'All Projects', count: projects.length },
-    { id: 'ai', label: 'AI & ML', count: projects.filter(p => p.category === 'ai').length },
-    { id: 'fullstack', label: 'Full-Stack', count: projects.filter(p => p.category === 'fullstack').length },
+    {
+      id: 'multilingual-rag',
+      title: 'Smart Multilingual Assistant',
+      category: 'intelligent-systems',
+      description: 'Multilingual RAG Chatbot using FAISS, Llama 3, and SERP API.',
+      longDescription: 'Developed a robust backend with document-aware, multilingual, and image-capable conversations across 20+ Indian languages using a RAG architecture.',
+      tech: ['FAISS', 'Llama 3', 'FastAPI', 'Python', 'MongoDB'],
+      features: ['Hybrid RAG architecture', '20+ languages support', 'Web-search integration'],
+      metrics: { capability: '20+ Languages', architecture: 'RAG Pipeline' },
+      github: 'https://github.com/Thanikarthik1/smart-multilingual-assistant',
+      icon: Brain,
+      status: 'Completed'
+    },
+    {
+      id: 'signature-recognition',
+      title: 'Computer Vision Signature Verification',
+      category: 'vision-media',
+      description: 'Automated signature recognition and forgery detection system.',
+      longDescription: 'Leveraged Computer Vision expertise to build a pipeline that preprocesses scanned documents, extracts structural features, and classifies signatures to prevent identity fraud.',
+      tech: ['Python', 'OpenCV', 'Scikit-Image', 'NumPy'],
+      features: ['Image preprocessing', 'Feature extraction (HOG)', 'Forgery detection'],
+      metrics: { domain: 'Computer Vision', processing: 'Automated Pipeline' },
+      demo:'',
+      github: 'https://github.com/Thanikarthik1/Signature-recognition',
+      icon: Target,
+      status: 'LIVE'
+    },
+    {
+      id: 'deepfake-audio',
+      title: 'Deepfake Audio Detection',
+      category: 'vision-media',
+      description: 'AI-generated audio classification using Mel-spectrograms and ResNet-18.',
+      longDescription: 'Leverages computer vision techniques on audio signals to distinguish between human speech and AI-generated spoofed audio.',
+      tech: ['ResNet-18', 'ASVspoof', 'Mel-Spectrograms', 'PyTorch'],
+      features: ['Signal-to-image conversion', 'Spoof detection'],
+      metrics: { technique: 'Spectral Analysis', model: 'ResNet-18' },
+      demo:'https://huggingface.co/spaces/karthik-the-great/deepfake-audio-detector',
+      github: 'https://github.com/Thanikarthik1/Deepfake-Audio-Detection',
+      icon: Mic,
+      status: 'LIVE'
+    },
+    {
+      id: 'toxic-detection',
+      title: 'Toxic Comment Classifier',
+      category: 'intelligent-systems',
+      description: 'Efficient transformer-based classifier for online content moderation.',
+      longDescription: 'Built using DistilBERT, this model implements dynamic class weighting to effectively identify rare, critical toxicity categories.',
+      tech: ['DistilBERT', 'PyTorch', 'Jigsaw Dataset'],
+      features: ['Dynamic class weighting', 'Real-time classification'],
+      metrics: { model: 'DistilBERT', accuracy: 'Robust' },
+      demo : 'https://huggingface.co/spaces/karthik-the-great/toxic_word_predection',
+      github: 'https://github.com/Thanikarthik1/Toxic_comments_detection',
+      icon: ShieldAlert,
+      status: 'LIVE'
+    },
+    {
+      id: 'job-portal',
+      title: 'Job Portal Management System',
+      category: 'web-platforms',
+      description: 'Comprehensive web platform for job seekers and employers.',
+      longDescription: 'Designed a responsive portal for filtering job listings, submitting applications, and managing employer dashboards.',
+      tech: ['Node.js', 'Express', 'MongoDB', 'JavaScript'],
+      features: ['Role-based auth', 'Dynamic filtering', 'Application dashboard'],
+      metrics: { backend: 'RESTful API', frontend: 'Mobile-First' },
+      github: 'https://github.com/Thanikarthik1/Online-Job-Portal-Management-System',
+      icon: Layers,
+      status: 'Completed'
+    },
+    {
+      id: 'movie-recommender',
+      title: 'ML Movie Recommender',
+      category: 'web-platforms',
+      description: 'Collaborative filtering engine for personalized film suggestions.',
+      longDescription: 'Built a pipeline using neural network embedding layers to predict user-item interaction scores based on historical preferences.',
+      tech: ['Python', 'Neural Networks', 'Pandas'],
+      features: ['50-dim embeddings', 'User/Item mapping'],
+      metrics: { architecture: 'Neural Collaborative', accuracy: 'High' },
+      demo : 'https://huggingface.co/spaces/karthik-the-great/Movie-Recommender',
+      github: 'https://github.com/Thanikarthik1/Movie_Recommendation_System',
+      icon: Play,
+      status: 'LIVE'
+    }
   ];
 
-  const filteredProjects = activeFilter === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeFilter);
+  const categories = [
+    { id: 'all', label: 'All Projects', count: projects.length },
+    { id: 'vision-media', label: 'Computer Vision & Media', count: projects.filter(p => p.category === 'vision-media').length },
+    { id: 'intelligent-systems', label: 'Intelligent Systems & RAG', count: projects.filter(p => p.category === 'intelligent-systems').length },
+    { id: 'web-platforms', label: 'Web Platforms & Tools', count: projects.filter(p => p.category === 'web-platforms').length },
+  ];
 
+  const filteredProjects = activeFilter === 'all' 
+    ? projects 
+    : projects.filter(p => p.category === activeFilter);
   return (
     <section id="projects" className="py-24 bg-background-secondary relative overflow-hidden">
       {/* Background */}
