@@ -7,6 +7,10 @@ import {
   ExternalLink, Github, Play,
   MessageCircle, Brain, Target, Layers
 } from 'lucide-react';
+import {
+  ExternalLink, Github, Play,
+  MessageCircle, Brain, Target, Layers, ShieldAlert, Mic
+} from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 
 const ProjectsSection = () => {
@@ -37,7 +41,7 @@ const ProjectsSection = () => {
       tech: ['Python', 'OpenCV', 'Scikit-Image', 'NumPy'],
       features: ['Image preprocessing', 'Feature extraction (HOG)', 'Forgery detection'],
       metrics: { domain: 'Computer Vision', processing: 'Automated Pipeline' },
-      demo:'',
+      demo:'NULL',
       github: 'https://github.com/Thanikarthik1/Signature-recognition',
       icon: Target,
       status: 'LIVE'
